@@ -1,0 +1,13 @@
+.container {
+  margin: 4rem 0rem;
+}
+
+.recipeCard {
+  min-height: 25rem;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.recipeCard > img {
+  border-radius: 2rem;
+}

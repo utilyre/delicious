@@ -1,9 +1,10 @@
 import styles from './Home.module.css'
+import { Popular } from '../../components'
 
 const Home = () => {
   return (
     <div>
-      Home Page
+      <Popular />
     </div>
   )
 }
