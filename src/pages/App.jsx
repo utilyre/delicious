@@ -1,8 +1,9 @@
+import Home from './Home/Home'
+
 const App = () => {
   return (
     <div>
-      <h1>Delicious</h1>
-      <p>Hello world!</p>
+      <Home />
     </div>
   )
 }
