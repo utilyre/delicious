@@ -1,21 +1,11 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 
 import styles from './Popular.module.css'
+import usePopularRecipes from '../../hooks/usePopularRecipes'
 
 const Popular = () => {
-  const [recipes, setRecipes] = useState(null)
-
-  const getPopularRecipes = async () => {
-    const response = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${import.meta.env.VITE_API_KEY}&number=9`)
-    setRecipes(response.data.recipes)
-  }
-
-  useEffect(() => {
-    getPopularRecipes()
-  }, [])
+  const [recipes, refetchRecipes] = usePopularRecipes()
 
   return (
     <div className={styles.container}>
