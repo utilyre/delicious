@@ -2,7 +2,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 
 import styles from './Popular.module.css'
-import usePopularRecipes from '../../hooks/usePopularRecipes'
+import { usePopularRecipes } from '../../hooks'
 
 const Popular = () => {
   const [recipes, refetchRecipes] = usePopularRecipes()
