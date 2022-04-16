@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './main.css'
-import { Home } from './pages'
+import { Cuisine, Home } from './pages'
 import { Category } from './components'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -18,6 +18,7 @@ function App() {
       <Category />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/cuisine/:type' element={<Cuisine />} />
       </Routes>
     </BrowserRouter>
   )
