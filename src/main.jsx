@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './main.css'
 import { Cuisine, Home, Result } from './pages'
-import { Category } from './components'
+import { Search, Category } from './components'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -15,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 function App() {
   return (
     <BrowserRouter>
+      <Search />
       <Category />
 
       <Routes>
