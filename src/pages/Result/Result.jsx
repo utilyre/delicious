@@ -11,7 +11,7 @@ const Result = () => {
 
   return (
     <div className={styles.grid}>
-      {recipes.map((recipe) => {
+      {recipes?.map((recipe) => {
         return (
           <div key={recipe.id} className={styles.card}>
             <img src={recipe.image} alt={recipe.title} />
