@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './main.css'
-import { Cuisine, Home } from './pages'
+import { Cuisine, Home, Result } from './pages'
 import { Category } from './components'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -16,9 +16,11 @@ function App() {
   return (
     <BrowserRouter>
       <Category />
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cuisine/:type' element={<Cuisine />} />
+        <Route path='/search' element={<Result />} />
       </Routes>
     </BrowserRouter>
   )
