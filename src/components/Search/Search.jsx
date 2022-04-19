@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { FaSearch } from 'react-icons/fa'
 
 import styles from './Search.module.css'
 
 const Search = () => {
-  const [input, setInput] = useState('')
+  const [searchParams] = useSearchParams()
+  const [input, setInput] = useState(searchParams.get('q'))
   const navigate = useNavigate()
 
   const submitHandler = (e) => {
