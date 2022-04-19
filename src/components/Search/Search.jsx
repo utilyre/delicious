@@ -4,6 +4,15 @@ import { FaSearch } from 'react-icons/fa'
 
 import styles from './Search.module.css'
 
+/**
+ * React component shows a functional searchbar
+ *
+ * @component
+ * @example
+ * return (
+ *   <Search />
+ * )
+ */
 const Search = () => {
   const [searchParams] = useSearchParams()
   const [input, setInput] = useState(searchParams.get('q') || '')

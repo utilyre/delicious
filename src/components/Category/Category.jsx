@@ -4,6 +4,15 @@ import { GiNoodles, GiChopsticks } from 'react-icons/gi'
 
 import styles from './Category.module.css'
 
+/**
+ * React component intended to switch between different categories
+ *
+ * @component
+ * @example
+ * return (
+ *   <Category />
+ * )
+ */
 const Category = () => {
   const navLinkClassName = ({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink
 

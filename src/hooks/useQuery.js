@@ -3,6 +3,14 @@ import axios from 'axios'
 
 import { digest } from '../utils'
 
+/**
+ * Makes API calls, caches the response, and provides the response as react state
+ *
+ * @param {string} url Url of API endpoint
+ * @param {{params: Object, cacheTimeout: number, deps: any[]}} [opts] Options
+ *
+ * @returns {[any, Function]}
+ */
 const useQuery = (url, opts = { params: {}, cacheTimeout: 3600000, deps: [] }) => {
   const [data, setData] = useState(null)
 

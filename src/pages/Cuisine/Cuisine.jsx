@@ -3,6 +3,23 @@ import { useParams } from 'react-router-dom'
 import styles from './Cuisine.module.css'
 import { useQuery } from '../../hooks'
 
+/**
+ * React page component for showing cuisines
+ *
+ * @component
+ * @example
+ * return (
+ *   <BrowserRouter>
+ *     ...
+ *     <Routes>
+ *       ...
+ *       <Route path='/cuisine/:type' element={<Cuisine />} />
+ *       ...
+ *     </Routes>
+ *     ...
+ *   </BrowserRouter/>
+ * )
+ */
 const Cuisine = () => {
   const { type } = useParams()
 

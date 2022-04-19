@@ -12,6 +12,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>
 )
 
+/**
+ * Root component of project
+ *
+ * @component
+ */
 function App() {
   return (
     <BrowserRouter>

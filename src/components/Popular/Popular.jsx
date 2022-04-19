@@ -4,6 +4,15 @@ import '@splidejs/react-splide/css'
 import styles from './Popular.module.css'
 import { useQuery } from '../../hooks'
 
+/**
+ * React component for displaying popular picks
+ *
+ * @component
+ * @example
+ * return (
+ *   <Popular />
+ * )
+ */
 const Popular = () => {
   const [data] = useQuery(`https://api.spoonacular.com/recipes/random?apiKey=${import.meta.env.VITE_API_KEY}&number=16`)
 

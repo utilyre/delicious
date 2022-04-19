@@ -3,6 +3,23 @@ import { useSearchParams } from 'react-router-dom'
 import styles from './Result.module.css'
 import { useQuery } from '../../hooks'
 
+/**
+ * React page component for displaying search results
+ *
+ * @component
+ * @example
+ * return (
+ *   <BrowserRouter>
+ *     ...
+ *     <Routes>
+ *       ...
+ *       <Route path='/search' element={<Home />} />
+ *       ...
+ *     </Routes>
+ *     ...
+ *   </BrowserRouter/>
+ * )
+ */
 const Result = () => {
   const [searchParams] = useSearchParams()
   const query = searchParams.get('q')
