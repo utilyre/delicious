@@ -2,10 +2,10 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 
 import styles from './Popular.module.css'
-import { usePopularRecipes } from '../../hooks'
+import { useQuery } from '../../hooks'
 
 const Popular = () => {
-  const [recipes, refetchRecipes] = usePopularRecipes()
+  const [data] = useQuery(`https://api.spoonacular.com/recipes/random?apiKey=${import.meta.env.VITE_API_KEY}&number=16`)
 
   return (
     <div className={styles.container}>
@@ -20,7 +20,7 @@ const Popular = () => {
           gap: '5rem',
         }}
       >
-        {recipes?.map((recipe) => {
+        {data?.recipes?.map((recipe) => {
           return (
             <SplideSlide key={recipe.id} className={styles.recipeCard}>
               <p>{recipe.title}</p>

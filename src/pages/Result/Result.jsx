@@ -1,17 +1,20 @@
 import { useSearchParams } from 'react-router-dom'
 
 import styles from './Result.module.css'
-import { useQueryRecipes } from '../../hooks'
+import { useQuery } from '../../hooks'
 
 const Result = () => {
   const [searchParams] = useSearchParams()
   const query = searchParams.get('q')
 
-  const [recipes, refetchRecipes] = useQueryRecipes(query)
+  const [data] = useQuery(
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${import.meta.env.VITE_API_KEY}&query=${query}`,
+    { deps: [query] }
+  )
 
   return (
     <div className={styles.grid}>
-      {recipes?.map((recipe) => {
+      {data?.results?.map((recipe) => {
         return (
           <div key={recipe.id} className={styles.card}>
             <img src={recipe.image} alt={recipe.title} />
