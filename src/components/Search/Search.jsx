@@ -6,7 +6,7 @@ import styles from './Search.module.css'
 
 const Search = () => {
   const [searchParams] = useSearchParams()
-  const [input, setInput] = useState(searchParams.get('q'))
+  const [input, setInput] = useState(searchParams.get('q') || '')
   const refInput = useRef()
   const navigate = useNavigate()
 
