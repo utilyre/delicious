@@ -1,5 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { useParams } from 'react-router-dom'
 
 import styles from './Cuisine.module.css'
 import { useQuery } from '../../hooks'
