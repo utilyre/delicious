@@ -1,0 +1,36 @@
+.recipeWrapper {
+  margin-block-start: 10rem;
+  margin-block-end: 5rem;
+  display: flex;
+}
+
+.recipeWrapper h2 {
+  margin-block-end: 2rem;
+}
+
+.recipeWrapper > ul {
+  margin-block-start: 2rem;
+}
+
+.recipeWrapper > li {
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
+
+.button {
+  padding: 1rem 2rem;
+  color: #313131;
+  background-color: white;
+  border: 2px solid black;
+  margin-inline-end: 2rem;
+  font-weight: 600;
+}
+
+.button.active {
+  background: linear-gradient(35deg, #494949, #313131);
+  color: white;
+}
+
+.info {
+  margin-inline-start: 10rem;
+}
