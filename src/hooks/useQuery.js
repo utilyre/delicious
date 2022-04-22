@@ -14,12 +14,14 @@ import { digest } from '../utils'
 const useQuery = (url, opts = { params: {}, cacheTimeout: 3600000, deps: [] }) => {
   const [data, setData] = useState(null)
 
-  const fetchData = async () => {
-    const cacheKey = await digest(`${url}:${JSON.stringify(opts.params)}`)
-    const rawCache = localStorage.getItem(cacheKey)
-    if (rawCache) {
-      const parsedCache = JSON.parse(rawCache)
-      if (Date.now() - parsedCache.updatedAt <= opts.cacheTimeout) return setData(parsedCache.data)
+  const fetchData = async (invalidateCache = true) => {
+    if (!invalidateCache) {
+      const cacheKey = await digest(`${url}:${JSON.stringify(opts.params)}`)
+      const rawCache = localStorage.getItem(cacheKey)
+      if (rawCache) {
+        const parsedCache = JSON.parse(rawCache)
+        if (Date.now() - parsedCache.updatedAt <= opts.cacheTimeout) return setData(parsedCache.data)
+      }
     }
 
     try {
@@ -32,7 +34,7 @@ const useQuery = (url, opts = { params: {}, cacheTimeout: 3600000, deps: [] }) =
     }
   }
 
-  useEffect(() => { fetchData() }, opts.deps)
+  useEffect(() => { fetchData(false) }, opts.deps)
   return [data, fetchData]
 }
 
