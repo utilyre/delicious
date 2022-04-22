@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 import styles from './Cuisine.module.css'
 import { useQuery } from '../../hooks'
@@ -29,7 +30,13 @@ const Cuisine = () => {
   )
 
   return (
-    <div className={styles.grid}>
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className={styles.grid}
+    >
       {data?.results?.map((result) => {
         return (
           <div key={result.id} className={styles.card}>
@@ -40,7 +47,7 @@ const Cuisine = () => {
           </div>
         )
       })}
-    </div>
+    </motion.div>
   )
 }
 
