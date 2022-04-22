@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './main.css'
 import { Cuisine, Home, Recipe, Result } from './pages'
-import { Search, Category } from './components'
+import { Nav, Search, Category } from './components'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -20,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 function App() {
   return (
     <BrowserRouter>
+      <Nav />
       <Search />
       <Category />
 
