@@ -1,4 +1,4 @@
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 import styles from './Result.module.css'
 import { useQuery } from '../../hooks'
@@ -34,8 +34,10 @@ const Result = () => {
       {data?.results?.map((recipe) => {
         return (
           <div key={recipe.id} className={styles.card}>
-            <img src={recipe.image} alt={recipe.title} />
-            <h4>{recipe.title}</h4>
+            <Link to={`/recipe/${recipe.id}`}>
+              <img src={recipe.image} alt={recipe.title} />
+              <h4>{recipe.title}</h4>
+            </Link>
           </div>
         )
       })}

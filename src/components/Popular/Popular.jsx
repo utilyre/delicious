@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 
@@ -32,9 +33,11 @@ const Popular = () => {
         {data?.recipes?.map((recipe) => {
           return (
             <SplideSlide key={recipe.id} className={styles.recipeCard}>
-              <p>{recipe.title}</p>
-              <img src={recipe.image} alt={recipe.title} />
-              <div className={styles.recipeCardGradient}></div>
+              <Link to={`/recipe/${recipe.id}`}>
+                <p>{recipe.title}</p>
+                <img src={recipe.image} alt={recipe.title} />
+                <div className={styles.recipeCardGradient}></div>
+              </Link>
             </SplideSlide>
           )
         })}

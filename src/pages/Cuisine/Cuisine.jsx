@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import styles from './Cuisine.module.css'
 import { useQuery } from '../../hooks'
@@ -33,8 +33,10 @@ const Cuisine = () => {
       {data?.results?.map((result) => {
         return (
           <div key={result.id} className={styles.card}>
-            <img src={result.image} alt={result.title} />
-            <h4>{result.title}</h4>
+            <Link to={`/recipe/${result.id}`}>
+              <img src={result.image} alt={result.title} />
+              <h4>{result.title}</h4>
+            </Link>
           </div>
         )
       })}
