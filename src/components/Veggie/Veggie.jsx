@@ -15,7 +15,7 @@ import { useQuery } from '../../hooks'
  * )
  */
 const Veggie = () => {
-  const [data] = useQuery(`https://api.spoonacular.com/recipes/random?apiKey=${import.meta.env.VITE_API_KEY}&number=9&tags=vegetarian`)
+  const [data] = useQuery(`${import.meta.env.VITE_BASE_URL}/random?apiKey=${import.meta.env.VITE_API_KEY}&number=9&tags=vegetarian`)
 
   return (
     <div className={styles.container}>

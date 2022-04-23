@@ -25,7 +25,7 @@ const Result = () => {
   const query = searchParams.get('q')
 
   const [data] = useQuery(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${import.meta.env.VITE_API_KEY}&query=${query}`,
+    `${import.meta.env.VITE_BASE_URL}/complexSearch?apiKey=${import.meta.env.VITE_API_KEY}&query=${query}`,
     { deps: [query] }
   )
 

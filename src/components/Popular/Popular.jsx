@@ -15,7 +15,7 @@ import { useQuery } from '../../hooks'
  * )
  */
 const Popular = () => {
-  const [data] = useQuery(`https://api.spoonacular.com/recipes/random?apiKey=${import.meta.env.VITE_API_KEY}&number=16`)
+  const [data] = useQuery(`${import.meta.env.VITE_BASE_URL}/random?apiKey=${import.meta.env.VITE_API_KEY}&number=16`)
 
   return (
     <div className={styles.container}>

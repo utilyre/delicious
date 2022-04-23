@@ -25,7 +25,7 @@ const Cuisine = () => {
   const { type } = useParams()
 
   const [data] = useQuery(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${import.meta.env.VITE_API_KEY}&cuisine=${type}`,
+    `${import.meta.env.VITE_BASE_URL}/complexSearch?apiKey=${import.meta.env.VITE_API_KEY}&cuisine=${type}`,
     { deps: [type] }
   )
 

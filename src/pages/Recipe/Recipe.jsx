@@ -11,7 +11,7 @@ const Recipe = () => {
   const { id } = useParams()
   const [activeTab, setActiveTab] = useState(INSTRUCTIONS)
   const [data] = useQuery(
-    `https://api.spoonacular.com/recipes/${id}/information?apiKey=${import.meta.env.VITE_API_KEY}`,
+    `${import.meta.env.VITE_BASE_URL}/${id}/information?apiKey=${import.meta.env.VITE_API_KEY}`,
     { deps: [id] },
   )
 
