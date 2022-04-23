@@ -15,8 +15,8 @@ const useQuery = (url, opts = { params: {}, cacheTimeout: 3600000, deps: [] }) =
   const [data, setData] = useState(null)
 
   const fetchData = async (invalidateCache = true) => {
+    const cacheKey = await digest(`${url}:${JSON.stringify(opts.params)}`)
     if (!invalidateCache) {
-      const cacheKey = await digest(`${url}:${JSON.stringify(opts.params)}`)
       const rawCache = localStorage.getItem(cacheKey)
       if (rawCache) {
         const parsedCache = JSON.parse(rawCache)
